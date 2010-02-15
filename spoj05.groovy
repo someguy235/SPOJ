@@ -11,7 +11,6 @@ for (i in 0..(number.size()-1)){
 	numInt[i] = Integer.parseInt(numStr[i])
 }
 
-isPal = false
 int leftIndex, rightIndex
 
 if ((number.size() % 2) == 0){
@@ -21,8 +20,6 @@ if ((number.size() % 2) == 0){
 else{
 	centerIndex = orgLeft = leftIndex = orgRight = rightIndex = ((number.size()-1) / 2)
 }
-
-//rolledOver = false
 
 while ((number[leftIndex] == number[rightIndex]) && (leftIndex >= 0)){
 	leftIndex--
