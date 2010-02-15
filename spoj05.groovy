@@ -2,18 +2,14 @@
 
 class spoj05Class {}
 
-number = "213890109999132"
-numStr = number.split("")
-numStr = numStr[1..-1]
+number = "12935"
+
+println "start: " + number
+numStr = number.split("")[1..-1]
 numInt = [number.size()-1]
 for (i in 0..(number.size()-1)){
-	//println Integer.parseInt(numStr[i])
 	numInt[i] = Integer.parseInt(numStr[i])
 }
-//println "numStr: " + numStr
-//println numStr[1]
-//numStr[1] = "1"
-//println numInt[1].getClass()
 
 isPal = false
 int leftIndex, rightIndex
@@ -26,7 +22,7 @@ else{
 	centerIndex = orgLeft = leftIndex = orgRight = rightIndex = ((number.size()-1) / 2)
 }
 
-rolledOver = false
+//rolledOver = false
 
 while ((number[leftIndex] == number[rightIndex]) && (leftIndex >= 0)){
 	leftIndex--
@@ -39,7 +35,6 @@ if (number[leftIndex] > number[rightIndex]){
 else{
 	nineChecking=true
 	nineCheckingIndex=centerIndex
-	//println numInt[nineCheckingIndex]
 	while(nineChecking && (nineCheckingIndex >= 0)){
 		if (numInt[nineCheckingIndex] == 9){
 			numInt[nineCheckingIndex] = 0
@@ -54,13 +49,13 @@ else{
 }
 
 def finishPal(left, right){
-	//println numInt
 	while(left>=0){
 		numInt[right++] = numInt[left--]
 	}
-	println "start: " + numStr
-	println "final: " + numInt
 }
 
-
+print "finish: "
+for (i in 0..(number.size()-1)){
+	print numInt[i]
+}
 
